@@ -18,7 +18,10 @@ public:
       for (size_t i = 0; i < length; ++i) {
         new_data[i] = data[i];
       }
-      delete[] data;
+      delete[] data; // NOTE: delete x is for deleting an object, delete[] is
+                     // for an array of objects, use them carefully
+                     // int* x = new int;    delete x;
+                     // int* arr = new int[5]; delete[] arr;
       data = new_data;
       capacity = new_cap;
     }
